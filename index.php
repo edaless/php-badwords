@@ -27,18 +27,32 @@
 
 
 <body>
+    <!-- 
+
+1. Creare una variabile con un paragrafo di testo a vostra scelta. 
+Stampare a schermo il paragrafo e la sua lunghezza. 
+2. Una parola da censurare viene passata dall'utente tramite parametro GET: 
+	- Stampare di nuovo il paragrafo e la sua lunghezza, 
+    dopo aver sostituito con tre asterischi tutte le occorrenze della parola da censurare. 
+-->
 
 
 
-
-
-    <h1>
+    <p>
         <?php
-        $name = "ciffcco";
-        echo "ciao " . $name;
-        ?>
-    </h1>
+        $name = "
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Soluta hic saepe a impedit aperiam! Itaque, doloremque quisquam officiis,
+        eos officia voluptate quam quos illum repellendus aliquam placeat omnis tempora laboriosam?";
+        echo nl2br($name);
+        // nl2br fa sì che quando vado a capo nel documento va a capo anche nell'output, fonte: stack overflow
+        echo nl2br("
 
+
+        in totale sono: " . strlen($name) . " caratteri");
+
+        ?>
+    </p>
 
 
 
