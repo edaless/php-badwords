@@ -40,16 +40,40 @@ Stampare a schermo il paragrafo e la sua lunghezza.
 
     <p>
         <?php
-        $name = "
+
+        // parte 1 
+        $paragrafo = "
         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Soluta hic saepe a impedit aperiam! Itaque, doloremque quisquam officiis,
         eos officia voluptate quam quos illum repellendus aliquam placeat omnis tempora laboriosam?";
-        echo nl2br($name);
+        echo nl2br($paragrafo);
         // nl2br fa sì che quando vado a capo nel documento va a capo anche nell'output, fonte: stack overflow
         echo nl2br("
 
+        in totale sono: " . strlen($paragrafo) . " caratteri");
 
-        in totale sono: " . strlen($name) . " caratteri");
+
+        // parte 2
+
+        $parolaccia = $_GET["badWord"];
+        echo nl2br("
+
+        per aggiungere la parola da censurare aggiungere: /?badWord=
+
+        parolaccia: " . $parolaccia);
+
+
+        $nuovoParagrafo = str_replace($parolaccia, "***", $paragrafo);
+
+        echo nl2br("
+        " . $nuovoParagrafo);
+
+
+        echo nl2br("
+
+        in totale sono: " . strlen($nuovoParagrafo) . " caratteri");
+
+
 
         ?>
     </p>
